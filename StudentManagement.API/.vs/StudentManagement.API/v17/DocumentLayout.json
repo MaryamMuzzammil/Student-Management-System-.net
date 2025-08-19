@@ -1,0 +1,466 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|c:\\users\\hp\\source\\repos\\studentmanagement.api\\studentmanagement.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|solutionrelative:studentmanagement.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Migrations\\20250819200817_LinkUserStudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:StudentManagement.API\\Migrations\\20250819200817_LinkUserStudent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|c:\\users\\hp\\source\\repos\\studentmanagement.api\\studentmanagement.api\\controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|solutionrelative:studentmanagement.api\\controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|C:\\Users\\hp\\source\\repos\\StudentManagement.API\\studentmanagement.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|solutionrelative:studentmanagement.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|C:\\Users\\hp\\source\\repos\\StudentManagement.API\\studentmanagement.api\\model\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|solutionrelative:studentmanagement.api\\model\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|c:\\users\\hp\\source\\repos\\studentmanagement.api\\studentmanagement.api\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|solutionrelative:studentmanagement.api\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|C:\\Users\\hp\\source\\repos\\StudentManagement.API\\studentmanagement.api\\dtos\\userlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|solutionrelative:studentmanagement.api\\dtos\\userlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|c:\\users\\hp\\source\\repos\\studentmanagement.api\\studentmanagement.api\\dtos\\registeruserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|solutionrelative:studentmanagement.api\\dtos\\registeruserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|C:\\Users\\hp\\source\\repos\\StudentManagement.API\\studentmanagement.api\\dtos\\savestudentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|solutionrelative:studentmanagement.api\\dtos\\savestudentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|C:\\Users\\hp\\source\\repos\\StudentManagement.API\\studentmanagement.api\\dtos\\studentlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|solutionrelative:studentmanagement.api\\dtos\\studentlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|C:\\Users\\hp\\source\\repos\\StudentManagement.API\\studentmanagement.api\\repositories\\studentrepositoy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|solutionrelative:studentmanagement.api\\repositories\\studentrepositoy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|C:\\Users\\hp\\source\\repos\\StudentManagement.API\\studentmanagement.api\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|solutionrelative:studentmanagement.api\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|C:\\Users\\hp\\source\\repos\\StudentManagement.API\\studentmanagement.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|solutionrelative:studentmanagement.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|C:\\Users\\hp\\source\\repos\\StudentManagement.API\\studentmanagement.api\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|solutionrelative:studentmanagement.api\\controllers\\coursescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|c:\\users\\hp\\source\\repos\\studentmanagement.api\\studentmanagement.api\\dtos\\createcoursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|solutionrelative:studentmanagement.api\\dtos\\createcoursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|C:\\Users\\hp\\source\\repos\\StudentManagement.API\\studentmanagement.api\\model\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|solutionrelative:studentmanagement.api\\model\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|C:\\Users\\hp\\source\\repos\\StudentManagement.API\\studentmanagement.api\\repositories\\courserepositoy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|solutionrelative:studentmanagement.api\\repositories\\courserepositoy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|C:\\Users\\hp\\source\\repos\\StudentManagement.API\\studentmanagement.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|solutionrelative:studentmanagement.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Migrations\\20250819125218_SomeNewChange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:StudentManagement.API\\Migrations\\20250819125218_SomeNewChange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Migrations\\20250819124324_UpdateDatabaseSchema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:StudentManagement.API\\Migrations\\20250819124324_UpdateDatabaseSchema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|C:\\Users\\hp\\source\\repos\\StudentManagement.API\\studentmanagement.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|solutionrelative:studentmanagement.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|c:\\users\\hp\\source\\repos\\studentmanagement.api\\studentmanagement.api\\migrations\\20250817204607_addusertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|solutionrelative:studentmanagement.api\\migrations\\20250817204607_addusertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|c:\\users\\hp\\source\\repos\\studentmanagement.api\\studentmanagement.api\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|solutionrelative:studentmanagement.api\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|c:\\users\\hp\\source\\repos\\studentmanagement.api\\studentmanagement.api\\migrations\\20250814184718_init_with_uniques.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|solutionrelative:studentmanagement.api\\migrations\\20250814184718_init_with_uniques.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|C:\\Users\\hp\\source\\repos\\StudentManagement.API\\studentmanagement.api\\migrations\\20250814184718_init_with_uniques.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|solutionrelative:studentmanagement.api\\migrations\\20250814184718_init_with_uniques.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|C:\\Users\\hp\\source\\repos\\StudentManagement.API\\studentmanagement.api\\studentmanagement.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{7E97FA5C-5B36-45A5-B6CE-513BBAEAD7A3}|StudentManagement.API\\StudentManagement.API.csproj|solutionrelative:studentmanagement.api\\studentmanagement.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "20250819200817_LinkUserStudent.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Migrations\\20250819200817_LinkUserStudent.cs",
+              "RelativeDocumentMoniker": "StudentManagement.API\\Migrations\\20250819200817_LinkUserStudent.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Migrations\\20250819200817_LinkUserStudent.cs",
+              "RelativeToolTip": "StudentManagement.API\\Migrations\\20250819200817_LinkUserStudent.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T20:08:17.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "StudentManagement.API\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Controllers\\UsersController.cs*",
+              "RelativeToolTip": "StudentManagement.API\\Controllers\\UsersController.cs*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T20:03:58.586Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SaveStudentDto.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Dtos\\SaveStudentDto.cs",
+              "RelativeDocumentMoniker": "StudentManagement.API\\Dtos\\SaveStudentDto.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Dtos\\SaveStudentDto.cs",
+              "RelativeToolTip": "StudentManagement.API\\Dtos\\SaveStudentDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T17:56:55.053Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RegisterUserDto.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Dtos\\RegisterUserDto.cs",
+              "RelativeDocumentMoniker": "StudentManagement.API\\Dtos\\RegisterUserDto.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Dtos\\RegisterUserDto.cs",
+              "RelativeToolTip": "StudentManagement.API\\Dtos\\RegisterUserDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T18:45:57.602Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "StudentLoginDto.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Dtos\\StudentLoginDto.cs",
+              "RelativeDocumentMoniker": "StudentManagement.API\\Dtos\\StudentLoginDto.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Dtos\\StudentLoginDto.cs",
+              "RelativeToolTip": "StudentManagement.API\\Dtos\\StudentLoginDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T18:19:02.633Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StudentsController.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Controllers\\StudentsController.cs",
+              "RelativeDocumentMoniker": "StudentManagement.API\\Controllers\\StudentsController.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Controllers\\StudentsController.cs",
+              "RelativeToolTip": "StudentManagement.API\\Controllers\\StudentsController.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAAgwEAAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T17:58:36.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "StudentManagement.API\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "StudentManagement.API\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAIcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T17:58:03.242Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserLoginDto.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Dtos\\UserLoginDto.cs",
+              "RelativeDocumentMoniker": "StudentManagement.API\\Dtos\\UserLoginDto.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Dtos\\UserLoginDto.cs",
+              "RelativeToolTip": "StudentManagement.API\\Dtos\\UserLoginDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T17:56:52.48Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Student.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Model\\Student.cs",
+              "RelativeDocumentMoniker": "StudentManagement.API\\Model\\Student.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Model\\Student.cs",
+              "RelativeToolTip": "StudentManagement.API\\Model\\Student.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAUwBoAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T17:55:42.014Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Model\\User.cs",
+              "RelativeDocumentMoniker": "StudentManagement.API\\Model\\User.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Model\\User.cs",
+              "RelativeToolTip": "StudentManagement.API\\Model\\User.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAswCAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T18:42:54.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "StudentRepositoy.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Repositories\\StudentRepositoy.cs",
+              "RelativeDocumentMoniker": "StudentManagement.API\\Repositories\\StudentRepositoy.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Repositories\\StudentRepositoy.cs",
+              "RelativeToolTip": "StudentManagement.API\\Repositories\\StudentRepositoy.cs",
+              "ViewState": "AQIAAEoAAAAAAAAAAAAqwFsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T18:01:33.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TokenService.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Services\\TokenService.cs",
+              "RelativeDocumentMoniker": "StudentManagement.API\\Services\\TokenService.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Services\\TokenService.cs",
+              "RelativeToolTip": "StudentManagement.API\\Services\\TokenService.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAqwEQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T18:07:00.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Program.cs",
+              "RelativeDocumentMoniker": "StudentManagement.API\\Program.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Program.cs",
+              "RelativeToolTip": "StudentManagement.API\\Program.cs",
+              "ViewState": "AQIAAEcAAAAAAAAAAAAuwFkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T18:15:35.32Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CoursesController.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Controllers\\CoursesController.cs",
+              "RelativeDocumentMoniker": "StudentManagement.API\\Controllers\\CoursesController.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Controllers\\CoursesController.cs",
+              "RelativeToolTip": "StudentManagement.API\\Controllers\\CoursesController.cs",
+              "ViewState": "AQIAAEYAAAAAAAAAAAAuwE8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T17:58:22.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CreateCourseDto.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Dtos\\CreateCourseDto.cs",
+              "RelativeDocumentMoniker": "StudentManagement.API\\Dtos\\CreateCourseDto.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Dtos\\CreateCourseDto.cs",
+              "RelativeToolTip": "StudentManagement.API\\Dtos\\CreateCourseDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T18:27:45.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CourseRepositoy.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Repositories\\CourseRepositoy.cs",
+              "RelativeDocumentMoniker": "StudentManagement.API\\Repositories\\CourseRepositoy.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Repositories\\CourseRepositoy.cs",
+              "RelativeToolTip": "StudentManagement.API\\Repositories\\CourseRepositoy.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAQwD0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T18:01:15.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Course.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Model\\Course.cs",
+              "RelativeDocumentMoniker": "StudentManagement.API\\Model\\Course.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Model\\Course.cs",
+              "RelativeToolTip": "StudentManagement.API\\Model\\Course.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T17:55:54.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\appsettings.json",
+              "RelativeDocumentMoniker": "StudentManagement.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\appsettings.json",
+              "RelativeToolTip": "StudentManagement.API\\appsettings.json",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAswA8AAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-14T17:47:00.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "20250819125218_SomeNewChange.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Migrations\\20250819125218_SomeNewChange.cs",
+              "RelativeDocumentMoniker": "StudentManagement.API\\Migrations\\20250819125218_SomeNewChange.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Migrations\\20250819125218_SomeNewChange.cs",
+              "RelativeToolTip": "StudentManagement.API\\Migrations\\20250819125218_SomeNewChange.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T12:52:18.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "20250819124324_UpdateDatabaseSchema.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Migrations\\20250819124324_UpdateDatabaseSchema.cs",
+              "RelativeDocumentMoniker": "StudentManagement.API\\Migrations\\20250819124324_UpdateDatabaseSchema.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Migrations\\20250819124324_UpdateDatabaseSchema.cs",
+              "RelativeToolTip": "StudentManagement.API\\Migrations\\20250819124324_UpdateDatabaseSchema.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T12:43:24.694Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "StudentManagement.API\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "StudentManagement.API\\Data\\AppDbContext.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAywDUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T17:59:13.596Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "20250817204607_AddUserTable.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Migrations\\20250817204607_AddUserTable.cs",
+              "RelativeDocumentMoniker": "StudentManagement.API\\Migrations\\20250817204607_AddUserTable.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Migrations\\20250817204607_AddUserTable.cs",
+              "RelativeToolTip": "StudentManagement.API\\Migrations\\20250817204607_AddUserTable.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T20:46:07.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "AppDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Migrations\\AppDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "StudentManagement.API\\Migrations\\AppDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Migrations\\AppDbContextModelSnapshot.cs",
+              "RelativeToolTip": "StudentManagement.API\\Migrations\\AppDbContextModelSnapshot.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T20:44:39.288Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "20250814184718_Init_With_Uniques.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Migrations\\20250814184718_Init_With_Uniques.Designer.cs",
+              "RelativeDocumentMoniker": "StudentManagement.API\\Migrations\\20250814184718_Init_With_Uniques.Designer.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Migrations\\20250814184718_Init_With_Uniques.Designer.cs",
+              "RelativeToolTip": "StudentManagement.API\\Migrations\\20250814184718_Init_With_Uniques.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T20:44:17.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "20250814184718_Init_With_Uniques.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Migrations\\20250814184718_Init_With_Uniques.cs",
+              "RelativeDocumentMoniker": "StudentManagement.API\\Migrations\\20250814184718_Init_With_Uniques.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\Migrations\\20250814184718_Init_With_Uniques.cs",
+              "RelativeToolTip": "StudentManagement.API\\Migrations\\20250814184718_Init_With_Uniques.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T18:47:18.925Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "StudentManagement.API.csproj",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\StudentManagement.API.csproj",
+              "RelativeDocumentMoniker": "StudentManagement.API\\StudentManagement.API.csproj",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\StudentManagement.API\\StudentManagement.API\\StudentManagement.API.csproj",
+              "RelativeToolTip": "StudentManagement.API\\StudentManagement.API.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-14T18:06:46.377Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

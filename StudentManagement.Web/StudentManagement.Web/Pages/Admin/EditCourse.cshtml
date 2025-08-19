@@ -1,0 +1,144 @@
+﻿@page "{id:int}"
+@model StudentManagement.Web.Pages.Admin.EditCourseModel
+@{
+    ViewData["Title"] = "Edit Course";
+    Layout = "_DashboardLayout";
+}
+
+<div class="edit-course-container">
+    <div class="edit-course-card">
+        <h2 class="form-title">✏️ Edit Course</h2>
+
+        @if (TempData["Error"] != null)
+        {
+            <div class="error-message">
+                @TempData["Error"]
+            </div>
+        }
+
+        <form method="post">
+            <input type="hidden" asp-for="Course.Id" />
+
+            <div class="form-group">
+                <label asp-for="Course.Title" class="form-label">Course Title</label>
+                <input asp-for="Course.Title" class="form-input" placeholder="Enter course title" />
+                <span asp-validation-for="Course.Title" class="validation-message"></span>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn-update">🔄 Update</button>
+                <a href="/Admin/Courses" class="btn-cancel">❌ Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<style>
+    /* === Container === */
+    .edit-course-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    /* === Card === */
+    .edit-course-card {
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        width: 100%;
+    }
+
+    /* === Title === */
+    .form-title {
+        text-align: center;
+        color: #fd7e14; /* Orange color for edit */
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    /* === Error Message === */
+    .error-message {
+        background: #f8d7da;
+        color: #842029;
+        padding: 10px;
+        border-radius: 6px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    /* === Input Fields === */
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-label {
+        font-weight: 600;
+        margin-bottom: 6px;
+        display: block;
+    }
+
+    .form-input {
+        width: 100%;
+        padding: 10px;
+        border: 2px solid #dee2e6;
+        border-radius: 6px;
+        transition: border-color 0.3s;
+    }
+
+        .form-input:focus {
+            border-color: #fd7e14;
+            outline: none;
+            box-shadow: 0 0 4px rgba(253, 126, 20, 0.4);
+        }
+
+    .validation-message {
+        color: #dc3545;
+        font-size: 0.85rem;
+    }
+
+    /* === Actions (Buttons) === */
+    .form-actions {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    .btn-update {
+        background: #fd7e14;
+        color: white;
+        padding: 10px 25px;
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+        .btn-update:hover {
+            background: #e56706;
+        }
+
+    .btn-cancel {
+        background: #f8f9fa;
+        color: #495057;
+        padding: 10px 25px;
+        border: 1px solid #ced4da;
+        border-radius: 6px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background 0.3s, color 0.3s;
+    }
+
+        .btn-cancel:hover {
+            background: #e9ecef;
+            color: #212529;
+        }
+</style>

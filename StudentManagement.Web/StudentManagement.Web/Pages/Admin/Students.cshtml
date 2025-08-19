@@ -1,0 +1,143 @@
+﻿@page
+@model StudentManagement.Web.Pages.Admin.StudentsModel
+@{
+    ViewData["Title"] = "Manage Students";
+    Layout = "_DashboardLayout";
+}
+
+<style>
+    .page-title {
+        font-size: 22px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .btn-custom {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 14px;
+        border-radius: 8px;
+        padding: 6px 12px;
+        transition: 0.2s ease-in-out;
+        text-decoration: none;
+        cursor: pointer;
+        border: none;
+    }
+
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+    .btn-add {
+        background: #4CAF50;
+        color: #fff;
+    }
+
+        .btn-add:hover {
+            background: #43a047;
+        }
+
+    .btn-edit {
+        background: #ffb300;
+        color: #fff;
+    }
+
+        .btn-edit:hover {
+            background: #ffa000;
+        }
+
+    .btn-delete {
+        background: #e53935;
+        color: #fff;
+    }
+
+        .btn-delete:hover {
+            background: #d32f2f;
+        }
+
+    .students-table {
+        width: 100%;
+        border-collapse: collapse;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+        .students-table thead {
+            background: #2c3e50;
+            color: #fff;
+        }
+
+        .students-table th, .students-table td {
+            padding: 12px 15px;
+            text-align: center;
+        }
+
+        .students-table tbody tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+
+        .students-table tbody tr:hover {
+            background: #f1f7ff;
+        }
+
+    .alert-custom {
+        padding: 10px 15px;
+        background: #ffebee;
+        border: 1px solid #e57373;
+        border-radius: 8px;
+        color: #c62828;
+        margin-bottom: 15px;
+    }
+</style>
+
+<h2 class="page-title">🎓 Student Management</h2>
+
+<a class="btn-custom btn-add mb-3" href="/Admin/Create">➕ Add Student</a>
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert-custom">@TempData["Error"]</div>
+}
+
+<table class="students-table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Course</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.StudentsVms != null && Model.StudentsVms.Any())
+        {
+            @foreach (var student in Model.StudentsVms)
+            {
+                <tr>
+                    <td>@student.Name</td>
+                    <td>@student.Email</td>
+                    <td>@student.Age</td>
+                    <td>@student.CourseTitle</td>
+                    <td>
+                        <a class="btn-custom btn-edit" href="/Admin/Edit/@student.Id">✏️ Edit</a>
+                        <form method="post" asp-page-handler="Delete" asp-route-id="@student.Id" style="display:inline;">
+                            <button type="submit" class="btn-custom btn-delete">🗑 Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="5" class="text-muted">No students found.</td>
+            </tr>
+        }
+    </tbody>
+</table>

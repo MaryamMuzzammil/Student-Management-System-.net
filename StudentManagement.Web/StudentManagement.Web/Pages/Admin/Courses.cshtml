@@ -1,0 +1,110 @@
+﻿@page
+@model StudentManagement.Web.Pages.Admin.CoursesModel
+@{
+    ViewData["Title"] = "Manage Courses";
+    Layout = "_DashboardLayout";
+}
+
+<h2 class="mb-4 text-primary">📚 Course Management</h2>
+
+<a asp-page="/Admin/CreateCourse" class="btn btn-success btn-sm mb-3 shadow-sm">➕ Add Course</a>
+
+
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger">@TempData["Error"]</div>
+}
+
+<div class="table-container">
+    <table class="custom-table">
+        <thead>
+            <tr>
+                <th>Course Title</th>
+                <th class="text-center">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Courses != null && Model.Courses.Any())
+            {
+                @foreach (var course in Model.Courses)
+                {
+                    <tr>
+                        <td>@course.Title</td>
+                        <td class="text-center">
+                            <a class="btn btn-warning btn-sm me-2 shadow-sm" href="/Admin/EditCourse/@course.Id">✏️ Edit</a>
+                            <form method="post" asp-page-handler="Delete" asp-route-id="@course.Id" style="display:inline;">
+                                <button type="submit" class="btn btn-danger btn-sm shadow-sm">🗑 Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="2" class="text-center text-muted">No courses found.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<style>
+    .table-container {
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .custom-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+        .custom-table thead {
+            background: #4a6cf7;
+            color: white;
+        }
+
+        .custom-table th, .custom-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .custom-table tr:hover {
+            background: #f9f9f9;
+        }
+
+    .btn {
+        border-radius: 8px;
+        padding: 5px 10px;
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        border: none;
+    }
+
+        .btn-success:hover {
+            background-color: #218838;
+        }
+
+    .btn-warning {
+        background-color: #ffc107;
+        border: none;
+    }
+
+        .btn-warning:hover {
+            background-color: #e0a800;
+        }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border: none;
+    }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+</style>

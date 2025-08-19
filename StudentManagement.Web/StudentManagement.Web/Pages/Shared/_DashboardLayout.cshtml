@@ -1,0 +1,124 @@
+﻿@* Layout file for all Admin pages *@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Admin Panel</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f9fafb, #eef2ff);
+        }
+
+        .wrapper {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: linear-gradient(180deg, #1e3a8a, #2563eb);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 2px 0 15px rgba(0,0,0,0.1);
+        }
+
+            .sidebar h2 {
+                padding: 20px;
+                font-size: 1.5rem;
+                font-weight: bold;
+                text-align: center;
+                border-bottom: 1px solid rgba(255,255,255,0.2);
+            }
+
+            .sidebar nav a {
+                padding: 14px 20px;
+                text-decoration: none;
+                color: white;
+                font-weight: 500;
+                transition: 0.3s;
+                display: block;
+            }
+
+                .sidebar nav a:hover {
+                    background: rgba(255,255,255,0.15);
+                    padding-left: 25px;
+                }
+
+        .main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .navbar {
+            background: rgba(255,255,255,0.9);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .footer {
+            background: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9rem;
+            color: #6b7280;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .content {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>⚙️ Admin Panel</h2>
+            <nav>
+                <a asp-page="/Admin/Dashboard">📊 Dashboard</a>
+                <a asp-page="/Admin/Students">👨‍🎓 Manage Students</a>
+                <a asp-page="/Admin/Courses">📚 Manage Courses</a>
+
+            </nav>
+        </div>
+
+        <!-- Main -->
+        <div class="main">
+            <div class="navbar">
+                <h1>@ViewData["Title"]</h1>
+                <form method="post" asp-page="/Login/Login">
+                    <button type="submit" class="btn btn-danger btn-sm">Logout</button>
+                </form>
+
+
+
+          
+            </div>
+
+            <!-- Injected Page Content -->
+            <div class="content">
+                @RenderBody()
+            </div>
+
+            <div class="footer">
+                © 2025 EduPortal Admin. All rights reserved.
+            </div>
+        </div>
+    </div>
+
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

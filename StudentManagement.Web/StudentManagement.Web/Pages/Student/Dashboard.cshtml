@@ -1,0 +1,14 @@
+﻿@page
+@model StudentManagement.Web.Pages.Student.DashboardModel
+@{
+    ViewData["Title"] = "Student Dashboard";
+}
+
+<h1>Welcome, @Model.Name 👋</h1>
+<p>Email: @Model.Email</p>
+<p>Age: @Model.Age</p>
+<p>Courses Enrolled: @Model.CoursesCount</p>
+
+<form method="post">
+    <button type="submit" asp-page-handler="Logout">Logout</button>
+</form>

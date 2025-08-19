@@ -1,0 +1,155 @@
+﻿@page
+@model StudentManagement.Web.Pages.Admin.DashboardModel
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "_DashboardLayout";
+}
+
+<style>
+    .dashboard-container {
+        padding: 20px;
+        font-family: Arial, sans-serif;
+    }
+
+    .dashboard-title {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #333;
+        text-align: center;
+    }
+
+    .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .card {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        background: #fff;
+        border-radius: 15px;
+        padding: 15px 20px;
+        width: 220px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        cursor: pointer;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+
+        .card .icon {
+            font-size: 28px;
+            background: #eee;
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        .card .details .label {
+            font-size: 14px;
+            color: #666;
+            margin: 0;
+        }
+
+        .card .details h2 {
+            font-size: 22px;
+            margin: 0;
+            font-weight: bold;
+            color: #222;
+        }
+
+        /* Cute pastel backgrounds */
+        .card.student {
+            background: #e6f0ff;
+        }
+
+        .card.course {
+            background: #e9fbe6;
+        }
+
+    /* Clock + Calendar styling */
+    .time-calendar {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 30px;
+        flex-wrap: wrap;
+    }
+
+    .clock, .calendar {
+        background: #fff;
+        border-radius: 15px;
+        padding: 20px 30px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        text-align: center;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .clock {
+        font-size: 28px;
+        letter-spacing: 2px;
+    }
+
+    .calendar {
+        font-size: 20px;
+    }
+</style>
+
+<div class="dashboard-container">
+    <h1 class="dashboard-title">✨ Dashboard Overview</h1>
+
+    <div class="cards-container">
+
+        <div class="card student">
+            <div class="icon">👨‍🎓</div>
+            <div class="details">
+                <p class="label">Students</p>
+                <h2>@Model.TotalStudents</h2>
+            </div>
+        </div>
+
+        <div class="card course">
+            <div class="icon">📚</div>
+            <div class="details">
+                <p class="label">Courses</p>
+                <h2>@Model.TotalCourses</h2>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Clock and Calendar Section -->
+    <div class="time-calendar">
+        <div class="clock" id="clock">--:--:--</div>
+        <div class="calendar" id="calendar">-- --, ----</div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function updateClockAndCalendar() {
+            const now = new Date();
+
+            // Clock
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById("clock").innerText = `${hours}:${minutes}:${seconds}`;
+
+            // Calendar
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById("calendar").innerText = now.toLocaleDateString('en-US', options);
+        }
+
+        setInterval(updateClockAndCalendar, 1000);
+        updateClockAndCalendar();
+    </script>
+}

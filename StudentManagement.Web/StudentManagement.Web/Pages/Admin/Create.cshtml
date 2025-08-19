@@ -1,0 +1,114 @@
+﻿@page
+@model StudentManagement.Web.Pages.Student.CreateModel
+@{
+    ViewData["Title"] = "Create Student";
+    Layout = "_DashboardLayout";
+}
+
+<style>
+    .form-card {
+        max-width: 600px;
+        margin: 40px auto;
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 25px 30px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+
+    .form-title {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 25px;
+        text-align: center;
+        color: #2c3e50;
+    }
+
+    .form-label {
+        font-weight: 600;
+        margin-bottom: 6px;
+        display: block;
+        color: #34495e;
+    }
+
+    .form-control {
+        border-radius: 8px;
+        padding: 10px 12px;
+        border: 1px solid #dcdcdc;
+    }
+
+        .form-control:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.4);
+        }
+
+    .btn-success {
+        background: #27ae60;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 8px;
+        font-weight: 600;
+    }
+
+        .btn-success:hover {
+            background: #219150;
+        }
+
+    .btn-secondary {
+        padding: 10px 18px;
+        border-radius: 8px;
+        font-weight: 600;
+        margin-left: 10px;
+    }
+</style>
+
+<div class="form-card">
+    <h2 class="form-title"> Add New Student</h2>
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">@TempData["Error"]</div>
+    }
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">@TempData["Success"]</div>
+    }
+
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="Student.Name" class="form-label"></label>
+            <input asp-for="Student.Name" class="form-control" />
+            <span asp-validation-for="Student.Name" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Student.StudentCode" class="form-label"></label>
+            <input asp-for="Student.StudentCode" class="form-control" />
+            <span asp-validation-for="Student.StudentCode" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Student.Email" class="form-label"></label>
+            <input asp-for="Student.Email" class="form-control" />
+            <span asp-validation-for="Student.Email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Student.Age" class="form-label"></label>
+            <input asp-for="Student.Age" type="number" class="form-control" />
+            <span asp-validation-for="Student.Age" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Student.CourseId" class="form-label"></label>
+            <select asp-for="Student.CourseId" class="form-control" asp-items="Model.Courses"></select>
+            <span asp-validation-for="Student.CourseId" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-success">💾 Save</button>
+        <a href="/Admin/Students" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

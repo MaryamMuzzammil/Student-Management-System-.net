@@ -1,0 +1,48 @@
+﻿@page
+@model StudentWeb.Pages.Student.CreateModel
+
+@{
+    ViewData["Title"] = "Create Student";
+}
+
+<div class="student-wrapper">
+    <div class="text-center mb-4">
+        <h1 class="display-4">Welcome to Student</h1>
+        <p class="display-6">Hi @ViewBag.Name - @ViewData["LastName"]</p>
+    </div>
+
+    <form method="post">
+        <input asp-for="StudentVM.Id" type="hidden" />
+
+        <div class="form-group mb-2">
+            <label asp-for="StudentVM.Name"></label>
+            <input class="form-control" asp-for="StudentVM.Name" />
+            <span class="text-danger" asp-validation-for="StudentVM.Name"></span>
+        </div>
+
+        <div class="form-group mb-2">
+            <label asp-for="StudentVM.Email"></label>
+            <input class="form-control" asp-for="StudentVM.Email" />
+            <span class="text-danger" asp-validation-for="StudentVM.Email"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="StudentVM.Age"></label>
+            <input class="form-control" asp-for="StudentVM.Age" />
+            <span class="text-danger" asp-validation-for="StudentVM.Age"></span>
+        </div>
+
+        <div class="form-group mb-3">
+            <label asp-for="StudentVM.CourseId"></label>
+            <select class="form-control" asp-for="StudentVM.CourseId" asp-items="Model.Courses"></select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <hr />
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,120 @@
+﻿@page "{id:int}"
+@model StudentManagement.Web.Pages.Student.EditModel
+@{
+    ViewData["Title"] = "Edit Student";
+    Layout = "_DashboardLayout";
+}
+
+<style>
+    .form-card {
+        max-width: 600px;
+        margin: 40px auto;
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 25px 30px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        transition: all 0.3s ease;
+    }
+
+        .form-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+        }
+
+    .form-title {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 25px;
+        text-align: center;
+        color: #2c3e50;
+    }
+
+    .form-label {
+        font-weight: 600;
+        margin-bottom: 6px;
+        display: block;
+        color: #34495e;
+    }
+
+    .form-control {
+        border-radius: 8px;
+        padding: 10px 12px;
+        border: 1px solid #dcdcdc;
+        transition: border-color 0.2s;
+    }
+
+        .form-control:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.4);
+        }
+
+    .btn-primary {
+        background: #2980b9;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: background 0.2s;
+    }
+
+        .btn-primary:hover {
+            background: #21618c;
+        }
+
+    .btn-secondary {
+        padding: 10px 18px;
+        border-radius: 8px;
+        font-weight: 600;
+        margin-left: 10px;
+    }
+</style>
+
+<div class="form-card">
+    <h2 class="form-title">✏️ Edit Student</h2>
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">@TempData["Error"]</div>
+    }
+
+    <form method="post">
+        <input type="hidden" asp-for="Student.Id" />
+
+        <div class="mb-3">
+            <label asp-for="Student.Name" class="form-label">Name</label>
+            <input asp-for="Student.Name" class="form-control" />
+            <span asp-validation-for="Student.Name" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Student.StudentCode" class="form-label">Student Code</label>
+            <input asp-for="Student.StudentCode" class="form-control" />
+            <span asp-validation-for="Student.StudentCode" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Student.Email" class="form-label">Email</label>
+            <input asp-for="Student.Email" class="form-control" />
+            <span asp-validation-for="Student.Email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Student.Age" class="form-label">Age</label>
+            <input asp-for="Student.Age" type="number" class="form-control" />
+            <span asp-validation-for="Student.Age" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Student.CourseId" class="form-label">Course</label>
+            <select asp-for="Student.CourseId" class="form-control" asp-items="Model.Courses"></select>
+            <span asp-validation-for="Student.CourseId" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">💾 Update</button>
+        <a href="/Admin/Students" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

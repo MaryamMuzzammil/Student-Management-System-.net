@@ -1,0 +1,88 @@
+﻿@page
+@model IndexModel
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="fw-bold text-primary">🎓 Students List</h2>
+        <a class="btn btn-success btn-sm shadow" href="/Student/Create">
+            <i class="bi bi-plus-circle"></i> Add Student
+        </a>
+    </div>
+
+    @if (TempData["Error"] != null && !string.IsNullOrEmpty(TempData["Error"].ToString()))
+    {
+        <div class="alert alert-danger">
+            <i class="bi bi-exclamation-triangle"></i> @TempData["Error"]
+        </div>
+    }
+
+    <div class="card shadow-lg rounded-3">
+        <div class="card-body">
+            <table class="table table-hover align-middle">
+                <thead class="table-primary text-center">
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                        <th>Course</th>
+                        <th style="width: 160px;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="studentBody">
+                    @if (Model.StudentsVms != null && Model.StudentsVms.Any())
+                    {
+                        foreach (var student in Model.StudentsVms)
+                        {
+                            <tr>
+                                <td>@student.Name</td>
+                                <td>@student.Email</td>
+                                <td>@student.Age</td>
+                                <td>@student.CourseTitle</td>
+                                <td class="text-center">
+                                    <a class="btn btn-warning btn-sm me-2 shadow-sm" href="/Student/Edit/@student.Id">
+                                        <i class="bi bi-pencil-square"></i> Edit
+                                    </a>
+                                    <a class="btn btn-danger btn-sm shadow-sm" href="/Student/Delete/@student.Id">
+                                        <i class="bi bi-trash"></i> Delete
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="5" class="text-center text-muted py-4">
+                                <i class="bi bi-emoji-frown fs-3"></i><br />
+                                No students found.
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <style>
+        body {
+            background: #f4f7fb;
+        }
+
+        h2 {
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .card {
+            border: none;
+        }
+
+        .table thead th {
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    </style>
+}
