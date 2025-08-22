@@ -5,30 +5,32 @@
     Layout = "_DashboardLayout";
 }
 
-<div class="create-course-container">
-    <div class="create-course-card">
-        <h2 class="form-title"> Add New Course</h2>
+<div class="form-card">
+    <h2 class="form-title"> Add New Course</h2>
 
-        @if (TempData["Error"] != null)
-        {
-            <div class="error-message">
-                @TempData["Error"]
-            </div>
-        }
+    @if (TempData["Error"] != null)
+    {
+        <div class="error-message">
+            @TempData["Error"]
+        </div>
+    }
 
-        <form method="post">
-            <div class="form-group">
-                <label asp-for="Course.Title" class="form-label">Course Title</label>
-                <input asp-for="Course.Title" class="form-input" placeholder="Enter course title" />
-                <span asp-validation-for="Course.Title" class="validation-message"></span>
-            </div>
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="Course.Title" class="form-label">Course Title</label>
+            <input asp-for="Course.Title" class="form-control" placeholder="Enter course title" />
+            <span asp-validation-for="Course.Title" class="validation-message"></span>
+        </div>
 
-            <div class="form-actions">
-                <button type="submit" class="btn-save">💾 Save</button>
-                <a href="/Admin/Courses" class="btn-cancel">❌ Cancel</a>
-            </div>
-        </form>
-    </div>
+        <div class="form-actions">
+            <button type="submit" class="btn-primary">
+                <i class="fas fa-save"></i> Save
+            </button>
+            <a href="/Admin/Courses" class="btn-secondary">
+                <i class="fas fa-times"></i> Cancel
+            </a>
+        </div>
+    </form>
 </div>
 
 @section Scripts {
@@ -36,107 +38,117 @@
 }
 
 <style>
-    /* === Container === */
-    .create-course-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 50px;
-    }
-
     /* === Card === */
-    .create-course-card {
+    .form-card {
+        max-width: 600px;
+        margin: 40px auto;
         background: #ffffff;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-        max-width: 500px;
-        width: 100%;
+        border-radius: 16px;
+        padding: 30px 35px;
+        box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+        animation: fadeInUp 0.6s ease-in-out;
     }
 
     /* === Title === */
     .form-title {
-        text-align: center;
-        color: #2c7be5;
+        font-size: 26px;
         font-weight: 700;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
+        text-align: center;
+        background: linear-gradient(45deg, #1e3c72, #2a5298);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
     /* === Error Message === */
     .error-message {
         background: #f8d7da;
         color: #842029;
-        padding: 10px;
-        border-radius: 6px;
+        padding: 12px;
+        border-radius: 8px;
         text-align: center;
-        margin-bottom: 15px;
-    }
-
-    /* === Input Fields === */
-    .form-group {
         margin-bottom: 20px;
     }
 
+    /* === Labels === */
     .form-label {
         font-weight: 600;
         margin-bottom: 6px;
         display: block;
+        color: #34495e;
     }
 
-    .form-input {
+    /* === Input === */
+    .form-control {
         width: 100%;
-        padding: 10px;
-        border: 2px solid #dee2e6;
-        border-radius: 6px;
-        transition: border-color 0.3s;
+        border-radius: 10px;
+        padding: 12px 14px;
+        border: 1px solid #dcdcdc;
+        transition: 0.3s ease;
     }
 
-        .form-input:focus {
-            border-color: #2c7be5;
-            outline: none;
-            box-shadow: 0 0 4px rgba(44, 123, 229, 0.4);
-        }
+    .form-control:focus {
+        border-color: #3498db;
+        box-shadow: 0 0 8px rgba(52, 152, 219, 0.4);
+        outline: none;
+    }
 
     .validation-message {
         color: #dc3545;
-        font-size: 0.85rem;
+        font-size: 0.9rem;
     }
 
-    /* === Actions (Buttons) === */
+    /* === Actions === */
     .form-actions {
+        margin-top: 25px;
         display: flex;
-        justify-content: space-between;
-        margin-top: 20px;
+        justify-content: flex-end;
     }
 
-    .btn-save {
-        background: #28a745;
-        color: white;
-        padding: 10px 25px;
+    /* Save Button */
+    .btn-primary {
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
         border: none;
-        border-radius: 6px;
+        padding: 12px 22px;
+        border-radius: 10px;
         font-weight: 600;
-        cursor: pointer;
-        transition: background 0.3s;
+        color: #fff;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
     }
 
-        .btn-save:hover {
-            background: #218838;
-        }
+    .btn-primary:hover {
+        background: linear-gradient(135deg, #2a5298, #1e3c72);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(46, 134, 222, 0.3);
+    }
 
-    .btn-cancel {
-        background: #f8f9fa;
-        color: #495057;
-        padding: 10px 25px;
-        border: 1px solid #ced4da;
-        border-radius: 6px;
+    /* Cancel Button */
+    .btn-secondary {
+        padding: 12px 22px;
+        border-radius: 10px;
         font-weight: 600;
+        margin-left: 12px;
+        background: #ecf0f1;
+        color: #2c3e50;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: none;
+        transition: all 0.3s ease;
         text-decoration: none;
-        transition: background 0.3s, color 0.3s;
     }
 
-        .btn-cancel:hover {
-            background: #e9ecef;
-            color: #212529;
-        }
+    .btn-secondary:hover {
+        background: #dcdcdc;
+        transform: translateY(-2px);
+    }
+
+   
+    }
 </style>
+
+<!-- Font Awesome CDN for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>

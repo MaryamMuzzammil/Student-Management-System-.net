@@ -1,4 +1,4 @@
-﻿@* Layout file for all Admin pages *@
+﻿@* Layout file for all Admin pages with Professional Icons *@
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,34 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Admin Panel</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
     <style>
         body {
             margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #f9fafb, #eef2ff);
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f3f6fb, #e0ecff);
         }
 
         .wrapper {
             display: flex;
             height: 100vh;
+            transition: all 0.3s ease-in-out;
         }
 
+        /* Sidebar */
         .sidebar {
             width: 250px;
-            background: linear-gradient(180deg, #1e3a8a, #2563eb);
+            background: linear-gradient(180deg, #1e3a8a, #2563eb, #3b82f6);
             color: white;
             display: flex;
             flex-direction: column;
-            box-shadow: 2px 0 15px rgba(0,0,0,0.1);
+            box-shadow: 2px 0 20px rgba(0, 0, 0, 0.15);
+            transition: width 0.3s ease-in-out;
+            overflow: hidden;
         }
+
+            .sidebar.collapsed {
+                width: 70px;
+            }
 
             .sidebar h2 {
                 padding: 20px;
-                font-size: 1.5rem;
-                font-weight: bold;
+                font-size: 1.4rem;
+                font-weight: 700;
                 text-align: center;
-                border-bottom: 1px solid rgba(255,255,255,0.2);
+                letter-spacing: 1px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+                transition: opacity 0.3s ease-in-out;
+            }
+
+            .sidebar.collapsed h2 {
+                opacity: 0;
             }
 
             .sidebar nav a {
@@ -41,70 +57,110 @@
                 text-decoration: none;
                 color: white;
                 font-weight: 500;
-                transition: 0.3s;
-                display: block;
+                font-size: 0.95rem;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                white-space: nowrap;
+                transition: all 0.3s ease-in-out;
+                border-left: 3px solid transparent;
             }
 
-                .sidebar nav a:hover {
-                    background: rgba(255,255,255,0.15);
-                    padding-left: 25px;
+                .sidebar nav a i {
+                    font-size: 1.1rem;
+                    width: 20px;
+                    text-align: center;
                 }
 
+                .sidebar nav a:hover {
+                    background: rgba(255, 255, 255, 0.15);
+                    padding-left: 28px;
+                    border-left: 3px solid #93c5fd;
+                    box-shadow: inset 3px 0 8px rgba(255, 255, 255, 0.2);
+                }
+
+            .sidebar.collapsed nav a span {
+                display: none;
+            }
+
+        /* Main Content */
         .main {
             flex: 1;
             display: flex;
             flex-direction: column;
+            transition: margin-left 0.3s ease-in-out;
         }
 
         .navbar {
-            background: rgba(255,255,255,0.9);
+            background: linear-gradient(90deg, #f8fafc, #eef2ff);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 25px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 12px 25px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            border-bottom: 2px solid #e0e7ff;
         }
 
+            .navbar h1 {
+                font-size: 1.3rem;
+                font-weight: 600;
+                color: #1e3a8a;
+                margin: 0;
+            }
+
+        .toggle-btn {
+            border: none;
+            background: none;
+            font-size: 1.7rem;
+            cursor: pointer;
+            color: #1e3a8a;
+            transition: 0.2s;
+        }
+
+            .toggle-btn:hover {
+                color: #2563eb;
+                transform: scale(1.1);
+            }
+
         .footer {
-            background: white;
+            background: linear-gradient(90deg, #1e3a8a, #2563eb);
             text-align: center;
             padding: 15px;
             font-size: 0.9rem;
-            color: #6b7280;
-            border-top: 1px solid rgba(0,0,0,0.05);
+            color: #e0ecff;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .content {
             flex: 1;
             padding: 30px;
             overflow-y: auto;
+            background: #f9faff;
         }
     </style>
 </head>
 <body>
     <div class="wrapper">
         <!-- Sidebar -->
-        <div class="sidebar">
-            <h2>⚙️ Admin Panel</h2>
+        <div class="sidebar" id="sidebar">
+            <h2><i class="fa-solid fa-gear"></i> Admin</h2>
             <nav>
-                <a asp-page="/Admin/Dashboard">📊 Dashboard</a>
-                <a asp-page="/Admin/Students">👨‍🎓 Manage Students</a>
-                <a asp-page="/Admin/Courses">📚 Manage Courses</a>
-
+                <a asp-page="/Admin/Dashboard"><i class="fa-solid fa-chart-line"></i> <span>Dashboard</span></a>
+                <a asp-page="/Admin/Students"><i class="fa-solid fa-user-graduate"></i> <span>Students</span></a>
+                <a asp-page="/Admin/Courses"><i class="fa-solid fa-book"></i> <span>Courses</span></a>
             </nav>
         </div>
 
         <!-- Main -->
         <div class="main">
             <div class="navbar">
+                <button class="toggle-btn" onclick="toggleSidebar()"><i class="fa-solid fa-bars"></i></button>
                 <h1>@ViewData["Title"]</h1>
                 <form method="post" asp-page="/Login/Login">
-                    <button type="submit" class="btn btn-danger btn-sm">Logout</button>
+                    <button type="submit" class="btn btn-danger btn-sm">
+                        <i class="fa-solid fa-right-from-bracket"></i> Logout
+                    </button>
                 </form>
-
-
-
-          
             </div>
 
             <!-- Injected Page Content -->
@@ -118,7 +174,12 @@
         </div>
     </div>
 
-    @RenderSection("Scripts", required: false)
+    <script>
+        function toggleSidebar() {
+            document.getElementById("sidebar").classList.toggle("collapsed");
+        }
+    </script>
 
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

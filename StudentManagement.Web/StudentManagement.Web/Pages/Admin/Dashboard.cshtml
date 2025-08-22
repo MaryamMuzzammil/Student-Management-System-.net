@@ -6,110 +6,124 @@
 }
 
 <style>
+    /* Global */
     .dashboard-container {
-        padding: 20px;
-        font-family: Arial, sans-serif;
+        padding: 25px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     .dashboard-title {
-        font-size: 22px;
-        font-weight: bold;
-        margin-bottom: 20px;
-        color: #333;
+        font-size: 26px;
+        font-weight: 600;
+        margin-bottom: 25px;
         text-align: center;
+        background: linear-gradient(45deg, #2563eb, #3b82f6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 1px;
     }
 
+    /* Cards Grid */
     .cards-container {
         display: flex;
         flex-wrap: wrap;
-        gap: 20px;
+        gap: 25px;
         justify-content: center;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
     }
 
     .card {
         display: flex;
         align-items: center;
         gap: 15px;
-        background: #fff;
-        border-radius: 15px;
-        padding: 15px 20px;
-        width: 220px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        border-radius: 18px;
+        padding: 20px;
+        width: 240px;
+        background: linear-gradient(135deg, #f9f9f9, #ffffff);
+        box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+        transition: all 0.3s ease-in-out;
         cursor: pointer;
     }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
         }
 
         .card .icon {
-            font-size: 28px;
-            background: #eee;
+            font-size: 30px;
             border-radius: 50%;
-            padding: 10px;
+            padding: 12px;
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .card .details .label {
             font-size: 14px;
-            color: #666;
+            color: #555;
             margin: 0;
         }
 
         .card .details h2 {
-            font-size: 22px;
+            font-size: 24px;
             margin: 0;
             font-weight: bold;
-            color: #222;
+            color: #1e293b;
         }
 
-        /* Cute pastel backgrounds */
-        .card.student {
-            background: #e6f0ff;
+        /* Unique gradients for cards */
+        .card.student .icon {
+            background: linear-gradient(135deg, #2563eb, #60a5fa);
         }
 
-        .card.course {
-            background: #e9fbe6;
+        .card.course .icon {
+            background: linear-gradient(135deg, #10b981, #34d399);
         }
 
-    /* Clock + Calendar styling */
+    /* Clock + Calendar */
     .time-calendar {
         display: flex;
         justify-content: center;
         gap: 40px;
-        margin-top: 30px;
+        margin-top: 35px;
         flex-wrap: wrap;
     }
 
     .clock, .calendar {
-        background: #fff;
-        border-radius: 15px;
-        padding: 20px 30px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        background: linear-gradient(135deg, #f9f9f9, #ffffff);
+        border-radius: 18px;
+        padding: 25px 35px;
+        box-shadow: 0 6px 14px rgba(0,0,0,0.1);
         text-align: center;
-        font-weight: bold;
-        color: #333;
+        font-weight: 600;
+        color: #1e293b;
+        min-width: 200px;
     }
 
     .clock {
         font-size: 28px;
         letter-spacing: 2px;
+        background: linear-gradient(135deg, #2563eb, #3b82f6);
+        color: white;
     }
 
     .calendar {
         font-size: 20px;
+        background: linear-gradient(135deg, #10b981, #34d399);
+        color: white;
     }
 </style>
 
 <div class="dashboard-container">
-    <h1 class="dashboard-title">✨ Dashboard Overview</h1>
+    <h1 class="dashboard-title"> Dashboard Overview</h1>
 
     <div class="cards-container">
 
         <div class="card student">
-            <div class="icon">👨‍🎓</div>
+            <div class="icon"><i class="fas fa-user-graduate"></i></div>
             <div class="details">
                 <p class="label">Students</p>
                 <h2>@Model.TotalStudents</h2>
@@ -117,7 +131,7 @@
         </div>
 
         <div class="card course">
-            <div class="icon">📚</div>
+            <div class="icon"><i class="fas fa-book-open"></i></div>
             <div class="details">
                 <p class="label">Courses</p>
                 <h2>@Model.TotalCourses</h2>
@@ -134,6 +148,7 @@
 </div>
 
 @section Scripts {
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
     <script>
         function updateClockAndCalendar() {
             const now = new Date();

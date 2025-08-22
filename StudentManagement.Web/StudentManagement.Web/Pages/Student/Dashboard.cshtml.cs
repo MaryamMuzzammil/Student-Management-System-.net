@@ -1,51 +1,81 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Net.Http.Json;
+using StudentWeb.ViewModels;
+using System.Net.Http.Headers;
+using System.Text.Json;
 
 namespace StudentManagement.Web.Pages.Student
 {
     public class DashboardModel : PageModel
     {
-        private readonly HttpClient _httpClient;
+        private readonly HttpClient httpClient;
+        private readonly IConfiguration configuration;
+        private readonly string apiUrl;
 
-        public DashboardModel(HttpClient httpClient)
+        public string Name { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public int Age { get; set; }
+        public string CourseTitle { get; set; } = string.Empty;
+
+        public DashboardModel(HttpClient httpClient, IConfiguration configuration)
         {
-            _httpClient = httpClient;
+            this.httpClient = httpClient;
+            this.configuration = configuration;
+            apiUrl = this.configuration["APIURL"];
         }
 
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public int Age { get; set; }
-        public int CoursesCount { get; set; }
-
-        public async Task<IActionResult> OnGetAsync()
+        public async Task<IActionResult> OnGet()
         {
-            if (!Request.Cookies.TryGetValue("JWToken", out var token) || string.IsNullOrEmpty(token))
-                return RedirectToPage("/Login/Login");
-
-            _httpClient.DefaultRequestHeaders.Authorization =
-                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-
             try
             {
-                var response = await _httpClient.GetAsync("https://localhost:5001/api/Students/me");
-                if (!response.IsSuccessStatusCode) return RedirectToPage("/Login/Login");
+                var token = Request.Cookies["JWToken"];
+                if (string.IsNullOrEmpty(token))
+                {
+                    return RedirectToPage("/Login/Login");
+                }
 
-                var student = await response.Content.ReadFromJsonAsync<StudentDto>();
-                if (student == null) return RedirectToPage("/Login/Login");
+                httpClient.DefaultRequestHeaders.Authorization =
+                    new AuthenticationHeaderValue("Bearer", token);
 
-                Id = student.Id;
-                Name = student.Name;
-                Email = student.Email;
-                Age = student.Age;
-                CoursesCount = student.CoursesCount;
+                var response = await httpClient.GetAsync($"{apiUrl}Students/me");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var json = await response.Content.ReadAsStringAsync();
+
+                    // Step 1 → Normal mapping
+                    var student = JsonSerializer.Deserialize<StudentViewModel>(json,
+                        new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+                    // Step 2 → Extract nested course.title
+                    using var doc = JsonDocument.Parse(json);
+                    var root = doc.RootElement;
+
+                    if (root.TryGetProperty("course", out var courseElement) &&
+                        courseElement.TryGetProperty("title", out var titleElement))
+                    {
+                        student.CourseTitle = titleElement.GetString() ?? "Not Assigned";
+                    }
+
+                    if (student != null)
+                    {
+                        Name = student.Name;
+                        Email = student.Email;
+                        Age = student.Age;
+                        CourseTitle = student.CourseTitle;
+                    }
+                }
+                else
+                {
+                    TempData["Error"] = "Failed to fetch student data.";
+                }
 
                 return Page();
             }
-            catch
+            catch (Exception)
             {
-                return RedirectToPage("/Login/Login");
+                TempData["Error"] = "Something went wrong while fetching data.";
+                return Page();
             }
         }
 
@@ -53,15 +83,6 @@ namespace StudentManagement.Web.Pages.Student
         {
             Response.Cookies.Delete("JWToken");
             return RedirectToPage("/Login/Login");
-        }
-
-        public class StudentDto
-        {
-            public int Id { get; set; }
-            public string Name { get; set; }
-            public string Email { get; set; }
-            public int Age { get; set; }
-            public int CoursesCount { get; set; }
         }
     }
 }

@@ -1,0 +1,7 @@
+C:\Users\hp\source\repos\StudentManagement.Web\StudentManagement.Web\obj\Release\net8.0\PubTmp\Out\StudentManagement.Web.exe
+C:\Users\hp\source\repos\StudentManagement.Web\StudentManagement.Web\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+C:\Users\hp\source\repos\StudentManagement.Web\StudentManagement.Web\obj\Release\net8.0\PubTmp\Out\appsettings.json
+C:\Users\hp\source\repos\StudentManagement.Web\StudentManagement.Web\obj\Release\net8.0\PubTmp\Out\StudentManagement.Web.dll
+C:\Users\hp\source\repos\StudentManagement.Web\StudentManagement.Web\obj\Release\net8.0\PubTmp\Out\StudentManagement.Web.deps.json
+C:\Users\hp\source\repos\StudentManagement.Web\StudentManagement.Web\obj\Release\net8.0\PubTmp\Out\StudentManagement.Web.runtimeconfig.json
+C:\Users\hp\source\repos\StudentManagement.Web\StudentManagement.Web\obj\Release\net8.0\PubTmp\Out\StudentManagement.Web.pdb

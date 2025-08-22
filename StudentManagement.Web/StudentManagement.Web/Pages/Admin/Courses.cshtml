@@ -5,106 +5,145 @@
     Layout = "_DashboardLayout";
 }
 
-<h2 class="mb-4 text-primary">📚 Course Management</h2>
+<!-- Page Styling -->
+<style>
+    .page-title {
+        font-size: 24px;
+        font-weight: 700;
+        color: #1e3a8a;
+        margin-bottom: 25px;
+        text-align: center;
+        background: linear-gradient(90deg, #1e3a8a, #2563eb);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 
-<a asp-page="/Admin/CreateCourse" class="btn btn-success btn-sm mb-3 shadow-sm">➕ Add Course</a>
+    .btn-custom {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 14px;
+        font-weight: 500;
+        border-radius: 10px;
+        padding: 8px 15px;
+        transition: 0.2s ease-in-out;
+        text-decoration: none;
+        cursor: pointer;
+        border: none;
+    }
 
+        .btn-custom i {
+            font-size: 14px;
+        }
+
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+    .btn-add {
+        background: linear-gradient(90deg, #1e40af, #3b82f6);
+        color: #fff;
+    }
+
+    .btn-edit {
+        background: #f59e0b;
+        color: #fff;
+    }
+
+    .btn-delete {
+        background: #ef4444;
+        color: #fff;
+    }
+
+    .courses-table {
+        width: 100%;
+        border-collapse: collapse;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        margin-top: 15px;
+    }
+
+        .courses-table thead {
+            background: linear-gradient(90deg, #1e3a8a, #2563eb);
+            color: #fff;
+        }
+
+        .courses-table th, .courses-table td {
+            padding: 14px 16px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .courses-table tbody tr:nth-child(even) {
+            background: #f9fbff;
+        }
+
+        .courses-table tbody tr:hover {
+            background: #e0ecff;
+        }
+
+    .alert-custom {
+        padding: 12px 16px;
+        background: #fee2e2;
+        border: 1px solid #f87171;
+        border-radius: 10px;
+        color: #b91c1c;
+        margin-bottom: 15px;
+    }
+</style>
+
+
+<!-- Page Title -->
+<h2 class="page-title">📚 Course Management</h2>
+
+<!-- Add Button -->
+<a class="btn-custom btn-add mb-3" href="/Admin/CreateCourse">
+    <i class="fas fa-plus"></i>  Add Course
+</a>
 
 @if (TempData["Error"] != null)
 {
-    <div class="alert alert-danger">@TempData["Error"]</div>
+    <div class="alert-custom">@TempData["Error"]</div>
 }
 
-<div class="table-container">
-    <table class="custom-table">
-        <thead>
-            <tr>
-                <th>Course Title</th>
-                <th class="text-center">Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @if (Model.Courses != null && Model.Courses.Any())
-            {
-                @foreach (var course in Model.Courses)
-                {
-                    <tr>
-                        <td>@course.Title</td>
-                        <td class="text-center">
-                            <a class="btn btn-warning btn-sm me-2 shadow-sm" href="/Admin/EditCourse/@course.Id">✏️ Edit</a>
-                            <form method="post" asp-page-handler="Delete" asp-route-id="@course.Id" style="display:inline;">
-                                <button type="submit" class="btn btn-danger btn-sm shadow-sm">🗑 Delete</button>
-                            </form>
-                        </td>
-                    </tr>
-                }
-            }
-            else
+<!-- Table -->
+<table class="courses-table">
+    <thead>
+        <tr>
+            <th>Course Title</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Courses != null && Model.Courses.Any())
+        {
+            @foreach (var course in Model.Courses)
             {
                 <tr>
-                    <td colspan="2" class="text-center text-muted">No courses found.</td>
+                    <td>@course.Title</td>
+                    <td>
+                        <a class="btn-custom btn-edit me-2" href="/Admin/EditCourse/@course.Id">
+                            <i class="bi bi-pencil-square"></i> Edit
+                        </a>
+                        <form method="post" asp-page-handler="Delete" asp-route-id="@course.Id" style="display:inline;">
+                            <button type="submit" class="btn-custom btn-delete">
+                                <i class="bi bi-trash"></i> Delete
+                            </button>
+                        </form>
+                    </td>
                 </tr>
             }
-        </tbody>
-    </table>
-</div>
-
-<style>
-    .table-container {
-        background: #fff;
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    }
-
-    .custom-table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-
-        .custom-table thead {
-            background: #4a6cf7;
-            color: white;
         }
-
-        .custom-table th, .custom-table td {
-            padding: 12px 15px;
-            border-bottom: 1px solid #eee;
+        else
+        {
+            <tr>
+                <td colspan="2" class="text-muted">No courses found.</td>
+            </tr>
         }
+    </tbody>
+</table>
 
-        .custom-table tr:hover {
-            background: #f9f9f9;
-        }
-
-    .btn {
-        border-radius: 8px;
-        padding: 5px 10px;
-    }
-
-    .btn-success {
-        background-color: #28a745;
-        border: none;
-    }
-
-        .btn-success:hover {
-            background-color: #218838;
-        }
-
-    .btn-warning {
-        background-color: #ffc107;
-        border: none;
-    }
-
-        .btn-warning:hover {
-            background-color: #e0a800;
-        }
-
-    .btn-danger {
-        background-color: #dc3545;
-        border: none;
-    }
-
-        .btn-danger:hover {
-            background-color: #c82333;
-        }
-</style>
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">

@@ -5,28 +5,34 @@
     Layout = "_DashboardLayout";
 }
 
+<!-- Bootstrap Icons / FontAwesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
 <style>
     .form-card {
-        max-width: 600px;
+        max-width: 650px;
         margin: 40px auto;
         background: #ffffff;
-        border-radius: 12px;
-        padding: 25px 30px;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+        border-radius: 16px;
+        padding: 30px 35px;
+        box-shadow: 0 8px 22px rgba(0,0,0,0.12);
         transition: all 0.3s ease;
+        animation: fadeInUp 0.6s ease-in-out;
     }
 
-        .form-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 22px rgba(0,0,0,0.18);
-        }
+    .form-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 26px rgba(0,0,0,0.18);
+    }
 
     .form-title {
-        font-size: 24px;
+        font-size: 26px;
         font-weight: 700;
         margin-bottom: 25px;
         text-align: center;
-        color: #2c3e50;
+        background: linear-gradient(45deg, #1e3c72, #2a5298);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 
     .form-label {
@@ -37,40 +43,63 @@
     }
 
     .form-control {
-        border-radius: 8px;
-        padding: 10px 12px;
+        border-radius: 10px;
+        padding: 12px 14px;
         border: 1px solid #dcdcdc;
-        transition: border-color 0.2s;
+        transition: 0.3s ease;
     }
 
-        .form-control:focus {
-            border-color: #3498db;
-            box-shadow: 0 0 5px rgba(52, 152, 219, 0.4);
-        }
+    .form-control:focus {
+        border-color: #3498db;
+        box-shadow: 0 0 8px rgba(52, 152, 219, 0.4);
+    }
 
+    /* Primary Button */
     .btn-primary {
-        background: #2980b9;
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
         border: none;
-        padding: 10px 18px;
-        border-radius: 8px;
+        padding: 12px 22px;
+        border-radius: 10px;
         font-weight: 600;
-        transition: background 0.2s;
+        color: #fff;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
     }
 
-        .btn-primary:hover {
-            background: #21618c;
-        }
+    .btn-primary:hover {
+        background: linear-gradient(135deg, #2a5298, #1e3c72);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(46, 134, 222, 0.3);
+    }
 
+    /* Secondary Button */
     .btn-secondary {
-        padding: 10px 18px;
-        border-radius: 8px;
+        padding: 12px 22px;
+        border-radius: 10px;
         font-weight: 600;
         margin-left: 10px;
+        background: #ecf0f1;
+        color: #2c3e50;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: none;
+        transition: all 0.3s ease;
+    }
+
+    .btn-secondary:hover {
+        background: #dcdcdc;
+        transform: translateY(-2px);
+    }
+
+   
     }
 </style>
 
 <div class="form-card">
-    <h2 class="form-title">✏️ Edit Student</h2>
+    <h2 class="form-title"><i class="fa-solid fa-user-pen"></i> Edit Student</h2>
 
     @if (TempData["Error"] != null)
     {
@@ -81,37 +110,37 @@
         <input type="hidden" asp-for="Student.Id" />
 
         <div class="mb-3">
-            <label asp-for="Student.Name" class="form-label">Name</label>
+            <label asp-for="Student.Name" class="form-label"><i class="fa-solid fa-user"></i> Name</label>
             <input asp-for="Student.Name" class="form-control" />
             <span asp-validation-for="Student.Name" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
-            <label asp-for="Student.StudentCode" class="form-label">Student Code</label>
+            <label asp-for="Student.StudentCode" class="form-label"><i class="fa-solid fa-id-card"></i> Student Code</label>
             <input asp-for="Student.StudentCode" class="form-control" />
             <span asp-validation-for="Student.StudentCode" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
-            <label asp-for="Student.Email" class="form-label">Email</label>
+            <label asp-for="Student.Email" class="form-label"><i class="fa-solid fa-envelope"></i> Email</label>
             <input asp-for="Student.Email" class="form-control" />
             <span asp-validation-for="Student.Email" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
-            <label asp-for="Student.Age" class="form-label">Age</label>
+            <label asp-for="Student.Age" class="form-label"><i class="fa-solid fa-cake-candles"></i> Age</label>
             <input asp-for="Student.Age" type="number" class="form-control" />
             <span asp-validation-for="Student.Age" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
-            <label asp-for="Student.CourseId" class="form-label">Course</label>
+            <label asp-for="Student.CourseId" class="form-label"><i class="fa-solid fa-book"></i> Course</label>
             <select asp-for="Student.CourseId" class="form-control" asp-items="Model.Courses"></select>
             <span asp-validation-for="Student.CourseId" class="text-danger"></span>
         </div>
 
-        <button type="submit" class="btn btn-primary">💾 Update</button>
-        <a href="/Admin/Students" class="btn btn-secondary">Cancel</a>
+        <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> Update</button>
+        <a href="/Admin/Students" class="btn btn-secondary"><i class="fa-solid fa-xmark"></i> Cancel</a>
     </form>
 </div>
 

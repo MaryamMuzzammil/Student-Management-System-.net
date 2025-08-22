@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using StudentWeb.ViewModels;
 using System.Net.Http.Headers;
+using System.Text.Json;
 
 namespace StudentManagement.Web.Pages.Admin
 {
@@ -27,18 +28,33 @@ namespace StudentManagement.Web.Pages.Admin
                 var token = Request.Cookies["JWToken"];
 
                 if (string.IsNullOrEmpty(token))
-                    return RedirectToPage("/Login/Login"); // ✅ agar token na mile toh login page
+                    return RedirectToPage("/Login/Login");
 
-                // JWT token header me bhejna
                 httpClient.DefaultRequestHeaders.Authorization =
                     new AuthenticationHeaderValue("Bearer", token);
 
-                // ✅ API call (backend StudentsController -> GET /api/Students)
+                // API call
                 var response = await httpClient.GetAsync($"{apiUrl}Students");
 
                 if (response.IsSuccessStatusCode)
                 {
-                    StudentsVms = await response.Content.ReadFromJsonAsync<List<StudentViewModel>>();
+                    // Step 1: API ka raw JSON read kar lo
+                    var jsonData = await response.Content.ReadFromJsonAsync<JsonElement>();
+
+                    // Step 2: JSON loop karke StudentViewModel me manually map karna
+                    StudentsVms = jsonData.EnumerateArray()
+                        .Select(s => new StudentViewModel
+                        {
+                            Id = s.GetProperty("id").GetInt32(),
+                            Name = s.GetProperty("name").GetString(),
+                            StudentCode = s.GetProperty("studentCode").GetString(),
+                            Email = s.GetProperty("email").GetString(),
+                            Age = s.GetProperty("age").GetInt32(),
+                            CourseId = s.GetProperty("courseId").GetInt32(),
+                            CourseTitle = s.TryGetProperty("course", out var course)
+                                          ? course.GetProperty("title").GetString()
+                                          : string.Empty
+                        }).ToList();
                 }
                 else
                 {
@@ -54,6 +70,7 @@ namespace StudentManagement.Web.Pages.Admin
                 return Page();
             }
         }
+
         public async Task<IActionResult> OnPostDelete(int id)
         {
             try

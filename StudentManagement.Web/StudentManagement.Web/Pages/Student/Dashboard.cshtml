@@ -1,14 +1,167 @@
 ﻿@page
 @model StudentManagement.Web.Pages.Student.DashboardModel
 @{
+    Layout = null;
     ViewData["Title"] = "Student Dashboard";
 }
 
-<h1>Welcome, @Model.Name 👋</h1>
-<p>Email: @Model.Email</p>
-<p>Age: @Model.Age</p>
-<p>Courses Enrolled: @Model.CoursesCount</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Student Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+        }
 
-<form method="post">
-    <button type="submit" asp-page-handler="Logout">Logout</button>
-</form>
+        /* HEADER */
+        header {
+            background: #1e40af;
+            color: #fff;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+
+            header h1 {
+                font-size: 1.5rem;
+                margin: 0;
+            }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 220px;
+            background: #1e3a8a;
+            color: white;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            height: calc(100% - 60px);
+            padding-top: 20px;
+            box-shadow: 2px 0 6px rgba(0,0,0,0.15);
+        }
+
+            .sidebar a {
+                display: block;
+                padding: 12px 20px;
+                color: #cbd5e1;
+                text-decoration: none;
+                font-size: 1rem;
+                transition: all 0.3s;
+            }
+
+                .sidebar a i {
+                    margin-right: 10px;
+                }
+
+                .sidebar a:hover {
+                    background: #2563eb;
+                    color: #fff;
+                }
+
+        /* MAIN CONTENT */
+        .main-content {
+            margin-left: 220px;
+            padding: 30px;
+        }
+
+        .dashboard-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+            .dashboard-card h2 {
+                margin-bottom: 15px;
+                font-size: 1.3rem;
+                color: #1e40af;
+            }
+
+        .student-info p {
+            margin: 8px 0;
+            font-size: 1.05rem;
+        }
+
+        /* LOGOUT BUTTON */
+        .logout-btn {
+            padding: 10px 20px;
+            background: #ef4444;
+            border: none;
+            border-radius: 6px;
+            color: white;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+            .logout-btn:hover {
+                background: #dc2626;
+            }
+
+        /* FOOTER */
+        footer {
+            background: #1e40af;
+            color: #cbd5e1;
+            padding: 15px 30px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 220px;
+            right: 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1><i class="fa-solid fa-graduation-cap"></i> Student Dashboard</h1>
+        <form method="post">
+            <button type="submit" asp-page-handler="Logout" class="logout-btn">
+                <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </button>
+        </form>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <a href="#"><i class="fa-solid fa-user"></i> Profile</a>
+        <a href="#"><i class="fa-solid fa-book"></i> My Courses</a>
+        <a href="#"><i class="fa-solid fa-clipboard-list"></i> Assignments</a>
+        <a href="#"><i class="fa-solid fa-chart-line"></i> Progress</a>
+        <a href="#"><i class="fa-solid fa-gear"></i> Settings</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="dashboard-card">
+            <h2><i class="fa-solid fa-user-graduate"></i> Welcome, @Model.Name</h2>
+            <div class="student-info">
+                <p><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> @Model.Email</p>
+                <p><i class="fa-solid fa-cake-candles"></i> <strong>Age:</strong> @Model.Age</p>
+                <p><i class="fa-solid fa-book-open"></i> <strong>Course:</strong> @Model.CourseTitle</p>
+            </div>
+        </div>
+
+        <div class="dashboard-card">
+            <h2><i class="fa-solid fa-bullhorn"></i> Announcements</h2>
+            <p>No new announcements today.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        © @DateTime.Now.Year Student Management System | Designed with <i class="fa-solid fa-heart"></i>
+    </footer>
+</body>
+</html>
